@@ -17,11 +17,13 @@ const charset = "abcdefghijklmnopqrstuvwxyz1234567890"
 const length = 36
 
 var screatkey = []byte("Si kepo hahaha")
+var auth smtp.Auth
 
 var seededRand *rand.Rand = rand.New(
 	rand.NewSource(time.Now().UnixNano()))
 
 type Helper struct {
+	validmail SmtpError
 }
 
 type Request struct {
@@ -52,16 +54,15 @@ func (r *Request) ParseTemplate(templateFileName string, data interface{}) error
 	return nil
 }
 
-var auth smtp.Auth
 
 func (r *Request) SendEmail() (bool, error) {
 	mime := "MIME-version: 1.0;\nContent-Type: text/html; charset=\"UTF-8\";\n\n"
 	subject := "Subject: " + r.subject + "!\n"
-	msg := []byte("From: SellPump <no-reply@gmail.com>\r\n" + subject + mime + "\n" + r.body)
+	msg := []byte(subject + mime + "\n" + r.body)
 	addr := "smtp.gmail.com:587"
 
 	//go smtp.SendMail(addr, auth, common.Config.EMAIL, r.to, msg);
-	if err := smtp.SendMail(addr, auth, common.Config.EMAIL, r.to, msg); err != nil {
+	if err := smtp.SendMail(addr, auth, "sellpump0@gmail.com", r.to, msg); err != nil {
 		return false, err
 	}
 	return true, nil
@@ -112,6 +113,7 @@ func (u *Helper) StringWithCharset() string {
 
 func (u *Helper) SendEmailVerifikasi(email string, id_user string, id_verifikasi string) error {
 
+	auth = smtp.PlainAuth("", common.Config.EMAIL, common.Config.PASSWORD, common.Config.SMTP_HOST)
 	templateData := struct {
 		Email   		string
 		IdUser			string
