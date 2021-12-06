@@ -1,0 +1,24 @@
+{
+"port": ":2208",
+"enableGinConsoleLog": true,
+"enableGinFileLog": true,
+
+"logFilename": "logs/server.log",
+"logMaxSize": 10,
+"logMaxBackups": 10,
+"logMaxAge": 30,
+
+"db_addrs_warnacrm": "192.168.133.90",
+"db_addrs_warnacrm_public": "174.138.31.4",
+"db_port_warnacrm": "5432",
+"db_name_warnacrm": "sellpump",
+"db_username_warnacrm": "postgres",
+"db_password_warnacrm": "hendy",
+
+"SMTP_HOST": "smtp.gmail.com",
+"SMTP_PORT": 587,
+"EMAIL": "sellpump0@gmail.com",
+"PASSWORD": "Qwerty123@"
+
+
+}

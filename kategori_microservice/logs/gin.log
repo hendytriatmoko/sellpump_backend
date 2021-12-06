@@ -1,0 +1,15 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /sellpump/api/kategori/v1/getkategori --> kategori_microservice/controllers.(*Kategori).GetDataKategori-fm (4 handlers)
+[GIN-debug] POST   /sellpump/api/kategori/v1/create --> kategori_microservice/controllers.(*Kategori).KategoriCreate-fm (4 handlers)
+[GIN-debug] PUT    /sellpump/api/kategori/v1/update --> kategori_microservice/controllers.(*Kategori).KategoriUpdate-fm (4 handlers)
+[GIN-debug] DELETE /sellpump/api/kategori/v1/delete --> kategori_microservice/controllers.(*Kategori).KategoriDelete-fm (4 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :2208
+[GIN] 2021/12/03 - 14:53:21 | 200 |    189.1459ms |       127.0.0.1 | GET      "/sellpump/api/kategori/v1/getkategori"
