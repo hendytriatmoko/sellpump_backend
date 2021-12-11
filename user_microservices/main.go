@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"github.com/gin-contrib/sessions"
 	_ "github.com/gin-contrib/sessions"
+	"github.com/gin-contrib/sessions/cookie"
 	_ "github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
 	cors "github.com/rs/cors/wrapper/gin"
@@ -12,6 +14,7 @@ import (
 	"user_microservices/common"
 	"user_microservices/controllers"
 	"user_microservices/databases"
+	"user_microservices/middleware"
 	"user_microservices/models"
 	//_ "./docs"
 	"github.com/swaggo/gin-swagger"
@@ -101,16 +104,28 @@ func main() {
 	//}
 	// Simple group: v1
 	api := m.router.Group("/sellpump/api/user")
+	store := cookie.NewStore([]byte(middleware.JwtKey()))
+	api.Use(sessions.Sessions("backend", store))
 	//api.Use(middleware.Auth)
 	{
 		api.Static("photo/", "./files")
 		v1 := api.Group("/v1")
 		//v1.Use(middleware.Auth)
 		{
-			v1.GET("/getuser", user.GetDataUser)
-			v1.POST("/create", user.UserCreate)
-			v1.PUT("/update", user.UserUpdate)
-			v1.DELETE("/delete", user.UserDelete)
+			userEP := v1.Group("user")
+			{
+				authUserEP := userEP.Group("")
+				authUserEP.Use(middleware.Auth)
+
+				authUserEP.GET("/getuser", user.GetDataUser)
+				userEP.POST("/create", user.UserCreate)
+				userEP.POST("/check", user.UserCheckAkun)
+				userEP.POST("/signin", user.Signin)
+				userEP.POST("/resend_verification", user.UserResendVerification)
+				userEP.POST("/forgot_password", user.UserForgotPassword)
+				userEP.PUT("/update", user.UserUpdate)
+				userEP.DELETE("/delete", user.UserDelete)
+			}
 		}
 
 	}

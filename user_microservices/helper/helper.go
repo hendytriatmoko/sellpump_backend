@@ -136,3 +136,25 @@ func (u *Helper) SendEmailVerifikasi(email string, id_user string, id_verifikasi
 
 	return error(nil)
 }
+
+func (u *Helper) SendForgotPassword(email string) error {
+
+	auth = smtp.PlainAuth("", common.Config.EMAIL, common.Config.PASSWORD, common.Config.SMTP_HOST)
+	templateData := struct {
+		Email   		string
+	}{
+		Email:     email,
+	}
+	r := NewRequest([]string{email}, "Forgot Password!", "Hello, World!")
+	//err := r.ParseTemplate("helper/email_invitation.html", templateData)
+	if err := r.ParseTemplate("config/forgot_password.html", templateData); err == nil {
+		ok, err := r.SendEmail()
+		fmt.Println(ok)
+
+		if err != nil {
+			return err
+		}
+	}
+
+	return error(nil)
+}

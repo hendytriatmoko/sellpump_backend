@@ -1,0 +1,225 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /sellpump/api/user/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] HEAD   /sellpump/api/user/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] GET    /sellpump/api/user/v1/user/getuser --> keranjang_microservice/controllers.(*Keranjang).GetDataKeranjang-fm (6 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :2209
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] HEAD   /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] GET    /sellpump/api/keranjang/v1/keranjang/getuser --> keranjang_microservice/controllers.(*Keranjang).GetDataKeranjang-fm (6 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :2209
+[GIN] 2021/12/07 - 21:46:46 | 404 |      1.2845ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] HEAD   /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] GET    /sellpump/api/keranjang/v1/keranjang/getkeranjang --> keranjang_microservice/controllers.(*Keranjang).GetDataKeranjang-fm (6 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :2209
+[GIN] 2021/12/07 - 21:47:19 | 401 |     88.8548ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/07 - 21:47:30 | 403 |            0s |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/07 - 21:47:40 | 403 |       176.6µs |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/07 - 21:47:42 | 403 |            0s |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/07 - 21:48:24 | 403 |            0s |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/07 - 21:48:44 | 403 |            0s |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/07 - 21:48:48 | 401 |     91.7289ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/07 - 21:49:25 | 403 |            0s |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/07 - 21:49:31 | 401 |     95.6263ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/07 - 21:49:48 | 401 |     92.5526ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/07 - 21:49:51 | 401 |    106.1421ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/07 - 21:49:52 | 401 |     94.8043ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/07 - 21:50:10 | 401 |     97.5955ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] HEAD   /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] GET    /sellpump/api/keranjang/v1/keranjang/getkeranjang --> keranjang_microservice/controllers.(*Keranjang).GetDataKeranjang-fm (5 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :2209
+[GIN] 2021/12/07 - 21:52:54 | 200 |     74.8412ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/07 - 21:52:58 | 200 |      84.299ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] HEAD   /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] GET    /sellpump/api/keranjang/v1/keranjang/getkeranjang --> keranjang_microservice/controllers.(*Keranjang).GetDataKeranjang-fm (5 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :2209
+[GIN] 2021/12/09 - 23:25:11 | 200 |     83.6338ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/09 - 23:25:30 | 200 |     85.0695ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/09 - 23:25:39 | 200 |     78.9705ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/09 - 23:25:41 | 200 |     75.9966ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/09 - 23:25:59 | 200 |    101.5409ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/09 - 23:26:00 | 200 |     87.2705ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/09 - 23:26:14 | 200 |     90.7923ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/09 - 23:28:17 | 200 |     84.0525ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/09 - 23:29:31 | 200 |     87.8987ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/09 - 23:29:59 | 404 |            0s |       127.0.0.1 | GET      "/sellpump/api/user/v1/user/getuser"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] HEAD   /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] GET    /sellpump/api/keranjang/v1/keranjang/getkeranjang --> keranjang_microservice/controllers.(*Keranjang).GetDataKeranjang-fm (6 handlers)
+[GIN-debug] POST   /sellpump/api/keranjang/v1/keranjang/create --> keranjang_microservice/controllers.(*Keranjang).KeranjangCreate-fm (5 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :2209
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] HEAD   /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] GET    /sellpump/api/keranjang/v1/keranjang/getkeranjang --> keranjang_microservice/controllers.(*Keranjang).GetDataKeranjang-fm (6 handlers)
+[GIN-debug] POST   /sellpump/api/keranjang/v1/keranjang/create --> keranjang_microservice/controllers.(*Keranjang).KeranjangCreate-fm (5 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :2209
+[GIN] 2021/12/09 - 23:49:14 | 500 |    158.9397ms |       127.0.0.1 | POST     "/sellpump/api/keranjang/v1/keranjang/create?id_user=srdlfv5m-5hyg-zjgp-2oqq-fbqh3ge8winm&id_produk=4tp71r84-zebf-2u0y-bwo7-dydwzmfdnsm4"
+[GIN] 2021/12/09 - 23:51:04 | 500 |    156.0052ms |       127.0.0.1 | POST     "/sellpump/api/keranjang/v1/keranjang/create"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] HEAD   /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] GET    /sellpump/api/keranjang/v1/keranjang/getkeranjang --> keranjang_microservice/controllers.(*Keranjang).GetDataKeranjang-fm (6 handlers)
+[GIN-debug] POST   /sellpump/api/keranjang/v1/keranjang/create --> keranjang_microservice/controllers.(*Keranjang).KeranjangCreate-fm (5 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :2209
+[GIN] 2021/12/09 - 23:54:19 | 500 |    131.3858ms |       127.0.0.1 | POST     "/sellpump/api/keranjang/v1/keranjang/create"
+[GIN] 2021/12/10 - 00:00:47 | 500 |    130.1058ms |       127.0.0.1 | POST     "/sellpump/api/keranjang/v1/keranjang/create"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] HEAD   /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] GET    /sellpump/api/keranjang/v1/keranjang/getkeranjang --> keranjang_microservice/controllers.(*Keranjang).GetDataKeranjang-fm (6 handlers)
+[GIN-debug] POST   /sellpump/api/keranjang/v1/keranjang/create --> keranjang_microservice/controllers.(*Keranjang).KeranjangCreate-fm (5 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :2209
+[GIN] 2021/12/10 - 00:01:41 | 200 |    136.8807ms |       127.0.0.1 | POST     "/sellpump/api/keranjang/v1/keranjang/create"
+[GIN] 2021/12/10 - 00:02:56 | 403 |       832.2µs |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/10 - 00:03:24 | 200 |    180.9522ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] HEAD   /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] GET    /sellpump/api/keranjang/v1/keranjang/getkeranjang --> keranjang_microservice/controllers.(*Keranjang).GetDataKeranjang-fm (6 handlers)
+[GIN-debug] POST   /sellpump/api/keranjang/v1/keranjang/create --> keranjang_microservice/controllers.(*Keranjang).KeranjangCreate-fm (5 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :2209
+[GIN] 2021/12/10 - 00:35:32 | 200 |    100.7409ms |       127.0.0.1 | POST     "/sellpump/api/keranjang/v1/keranjang/create"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] HEAD   /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] GET    /sellpump/api/keranjang/v1/keranjang/getkeranjang --> keranjang_microservice/controllers.(*Keranjang).GetDataKeranjang-fm (6 handlers)
+[GIN-debug] POST   /sellpump/api/keranjang/v1/keranjang/create --> keranjang_microservice/controllers.(*Keranjang).KeranjangCreate-fm (5 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :2209
+[GIN] 2021/12/10 - 00:38:31 | 200 |      105.22ms |       127.0.0.1 | POST     "/sellpump/api/keranjang/v1/keranjang/create"
+[GIN] 2021/12/10 - 00:38:44 | 200 |     95.1011ms |       127.0.0.1 | POST     "/sellpump/api/keranjang/v1/keranjang/create"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] HEAD   /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] GET    /sellpump/api/keranjang/v1/keranjang/getkeranjang --> keranjang_microservice/controllers.(*Keranjang).GetDataKeranjang-fm (6 handlers)
+[GIN-debug] POST   /sellpump/api/keranjang/v1/keranjang/create --> keranjang_microservice/controllers.(*Keranjang).KeranjangCreate-fm (5 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :2209
+[GIN] 2021/12/10 - 00:40:20 | 200 |    287.5402ms |       127.0.0.1 | POST     "/sellpump/api/keranjang/v1/keranjang/create"
+[GIN] 2021/12/10 - 00:40:47 | 200 |    199.8617ms |       127.0.0.1 | POST     "/sellpump/api/keranjang/v1/keranjang/create"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] HEAD   /sellpump/api/keranjang/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] GET    /sellpump/api/keranjang/v1/keranjang/getkeranjang --> keranjang_microservice/controllers.(*Keranjang).GetDataKeranjang-fm (6 handlers)
+[GIN-debug] POST   /sellpump/api/keranjang/v1/keranjang/create --> keranjang_microservice/controllers.(*Keranjang).KeranjangCreate-fm (6 handlers)
+[GIN-debug] DELETE /sellpump/api/keranjang/v1/keranjang/delete --> keranjang_microservice/controllers.(*Keranjang).KeranjangDelete-fm (6 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :2209
+[GIN] 2021/12/10 - 01:08:43 | 403 |       999.7µs |       127.0.0.1 | POST     "/sellpump/api/keranjang/v1/keranjang/create"
+[GIN] 2021/12/10 - 01:09:05 | 200 |    245.7071ms |       127.0.0.1 | POST     "/sellpump/api/keranjang/v1/keranjang/create"
+[GIN] 2021/12/10 - 01:09:50 | 404 |            0s |       127.0.0.1 | DELETE   "/sellpump/api/keranjang/v1/keranjang?id_keranjang=5cv6h8b6-mn5m-cnnf-p8qu-9xjs2ohkchnr"
+[GIN] 2021/12/10 - 01:10:11 | 404 |            0s |       127.0.0.1 | DELETE   "/sellpump/api/keranjang/v1/delete?id_keranjang=5cv6h8b6-mn5m-cnnf-p8qu-9xjs2ohkchnr"
+[GIN] 2021/12/10 - 01:10:28 | 403 |            0s |       127.0.0.1 | DELETE   "/sellpump/api/keranjang/v1/keranjang/delete?id_keranjang=5cv6h8b6-mn5m-cnnf-p8qu-9xjs2ohkchnr"
+[GIN] 2021/12/10 - 01:11:03 | 403 |            0s |       127.0.0.1 | DELETE   "/sellpump/api/keranjang/v1/keranjang/delete?id_keranjang=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJjbGllbnRfaWQiOiJzcmRsZnY1bS01aHlnLXpqZ3AtMm9xcS1mYnFoM2dlOHdpbm0iLCJjbGllbnRfcGxhdGZvcm0iOiJub25lIiwiY2xpZW50X3JvbGUiOiJ1c2VyIiwiY2xpZW50X3R5cGUiOiJub25lIiwiZXhwIjoxNjM5MTU5ODUwfQ.9YYnLUUlOBEgyXD75pGnNwY10ha6smeCE9QdWTqFeDQ"
+[GIN] 2021/12/10 - 01:11:39 | 200 |    243.4996ms |       127.0.0.1 | DELETE   "/sellpump/api/keranjang/v1/keranjang/delete?id_keranjang=5cv6h8b6-mn5m-cnnf-p8qu-9xjs2ohkchnr"
+[GIN] 2021/12/10 - 01:12:04 | 401 |    180.3308ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"
+[GIN] 2021/12/10 - 01:12:15 | 200 |     183.321ms |       127.0.0.1 | GET      "/sellpump/api/keranjang/v1/keranjang/getkeranjang"

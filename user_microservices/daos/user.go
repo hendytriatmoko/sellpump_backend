@@ -1,12 +1,15 @@
 package daos
 
 import (
+	"errors"
+	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
 	"time"
 	"user_microservices/databases"
 	"user_microservices/helper"
+	"user_microservices/middleware"
 	"user_microservices/models"
 )
 
@@ -43,7 +46,7 @@ func (m *User) UserCreate(params models.CreateUser) (models.UserCreate, error) {
 	user.Email = params.Email
 	user.Password,_ = EncryptPassword(params.Password)
 	user.Status = "pembeli"
-	user.Verifikasi = false
+	user.Verifikasi = "N"
 	user.CreatedAt = m.helper.GetTimeNow()
 
 	err := databases.DatabaseSellPump.DB.Table("user").Create(&user).Error
@@ -69,7 +72,7 @@ func (m *User) VerifikasiUser(params models.VerifikasiUser) error {
 	verifikasi.IdVerifikasi = m.helper.StringWithCharset()
 	verifikasi.IdUser = params.IdUser
 	verifikasi.Email = params.Email
-	verifikasi.Status = false
+	verifikasi.Status = "N"
 	verifikasi.CreatedAt = m.helper.GetTimeNow()
 
 	ti := time.Now()
@@ -99,6 +102,9 @@ func (m *User) UserGet(params models.GetUser) ([]models.UserGet, error) {
 	err := databases.DatabaseSellPump.DB.Table("user")
 	if params.IdUser != "" {
 		err = err.Where("id_user = ?", params.IdUser)
+	}
+	if params.Email != "" {
+		err = err.Where("email = ?", params.Email)
 	}
 
 	err = err.Find(&user)
@@ -172,5 +178,177 @@ func (m *User) UserDelete(params models.DeleteUser) (models.DeleteUser, error) {
 	}
 
 	return user, nil
+
+}
+
+func (m *User) UserCheckAkun(params models.CheckAkunUser) error {
+
+	checkakun := models.CheckAkunRead{}
+	var check bool
+	today := m.helper.GetTimeNow()
+
+	check = databases.DatabaseSellPump.DB.Table("verifikasi v").
+		Where("v.email = ?", params.Email).Find(&checkakun).RecordNotFound()
+
+	if check == true {
+		err := errors.New("Email Tidak Ditemukan")
+		return err
+	}else if check == false {
+		if today > checkakun.ExpiredAt {
+			err := errors.New("Verification Expired")
+			return err
+		}else if today < checkakun.ExpiredAt {
+			if checkakun.Status == "N" {
+				err := errors.New("Silahkan Verifikasi Email Anda")
+				return err
+			}
+		}
+	}
+
+	return error(nil)
+
+}
+
+func (m *User) UserResendVerification(params models.CheckAkunUser) (models.CheckAkunRead, error) {
+
+	updateverifikasi := models.CheckAkunRead{}
+
+	updateverifikasi.ExpiredAt = m.helper.GetTimeNow()
+
+	err := databases.DatabaseSellPump.DB.Table("verifikasi").Where("email = ?", params.Email).Update(&updateverifikasi).Error
+
+	if err != nil {
+		return models.CheckAkunRead{}, err
+	}
+
+	errx := databases.DatabaseSellPump.DB.Table("verifikasi").Where("email = ?", params.Email).Find(&updateverifikasi).Error
+
+	if errx != nil {
+		return models.CheckAkunRead{}, errx
+	}
+
+	erry := m.helper.SendEmailVerifikasi(updateverifikasi.Email, updateverifikasi.IdUser, updateverifikasi.IdVerifikasi)
+	if erry != nil {
+		return updateverifikasi, erry
+	}
+
+	return updateverifikasi, nil
+
+}
+
+func (m *User) UserForgotPassword(params models.CheckAkunUser) (models.UserGet, error) {
+
+	updateverifikasi := models.UserGet{}
+
+	errx := databases.DatabaseSellPump.DB.Table("user").Where("email = ?", params.Email).Find(&updateverifikasi).Error
+
+	if errx != nil {
+		return models.UserGet{}, errx
+	}
+
+	erry := m.helper.SendForgotPassword(updateverifikasi.Email)
+	if erry != nil {
+		return updateverifikasi, erry
+	}
+
+	return updateverifikasi, nil
+
+}
+
+func (m *User) LoginCheck(params models.UserToken) error {
+
+	checkakun := models.UserGet{}
+	var check bool
+
+	check = databases.DatabaseSellPump.DB.Table("user").
+		Where("email = ?", params.Email).Find(&checkakun).RecordNotFound()
+
+	if check == true {
+		err := errors.New("Email Tidak Ditemukan")
+		return err
+	}
+
+	return error(nil)
+
+}
+
+func (m *User) UserGetLogin(params models.UserLogin) ([]models.UserGet, error) {
+
+	user := []models.UserGet{}
+
+	err := databases.DatabaseSellPump.DB.Table("user")
+	if params.IdUser != "" {
+		err = err.Where("id_user = ?", params.IdUser)
+	}
+
+	err = err.Find(&user)
+
+	errx := err.Error
+
+
+	if errx != nil {
+		return []models.UserGet{}, errx
+	}
+
+	return user, nil
+}
+
+func (m *User) Signin(params models.UserToken) ([]models.UserGet, string, error) {
+
+	userGet := models.GetUser{}
+	userRead := []models.UserGet{}
+	updateToken := models.UserUpdate{}
+	var token string
+	var er error
+
+	err := m.LoginCheck(params)
+
+	if err != nil {
+		return userRead, "", err
+	}
+
+	if params.Email != "" {
+		userGet.Email = params.Email
+	}
+	if params.Password != "" {
+		userGet.Password = params.Password
+	}
+
+	userRead, err = m.UserGet(userGet)
+
+	if err != nil {
+		return userRead, "", err
+	}
+
+	if userRead[0].Verifikasi == "N" {
+		err = errors.New("Akun Anda di Nonaktifkan, Tidak Dapat di Akses")
+		return userRead, "", err
+	}
+
+	//token, er := m.helper.GetToken(userRead[0].IdUser)
+	password,_ := DecryptPassword(userRead[0].Password)
+
+	if userRead[0].Email == params.Email && params.Password == password && userRead[0].Verifikasi == "Y"  {
+		fmt.Println("cocok")
+		token, er = middleware.CreateAuth(userRead[0].IdUser, "user", "none", "none")
+
+		if er != nil {
+			return userRead, "", er
+		}
+
+		updateToken.Token = token
+
+		err = databases.DatabaseSellPump.DB.Table("user").Where("id_user = ?", userRead[0].IdUser).Update(&updateToken).Error
+
+		if err != nil {
+			return userRead, "", err
+		}
+	}else {
+		fmt.Println("tidak cocok")
+	}
+
+
+
+	return userRead, token, nil
 
 }

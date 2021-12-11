@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"github.com/gin-contrib/sessions"
 	_ "github.com/gin-contrib/sessions"
+	"github.com/gin-contrib/sessions/cookie"
 	_ "github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
 	cors "github.com/rs/cors/wrapper/gin"
@@ -12,6 +14,7 @@ import (
 	"produk_microservice/common"
 	"produk_microservice/controllers"
 	"produk_microservice/databases"
+	"produk_microservice/middleware"
 	"produk_microservice/models"
 	//_ "./docs"
 	"github.com/swaggo/gin-swagger"
@@ -101,16 +104,24 @@ func main() {
 	//}
 	// Simple group: v1
 	api := m.router.Group("/sellpump/api/produk")
+	store := cookie.NewStore([]byte(middleware.JwtKey()))
+	api.Use(sessions.Sessions("backend", store))
 	//api.Use(middleware.Auth)
 	{
 		api.Static("photo/", "./files")
 		v1 := api.Group("/v1")
 		//v1.Use(middleware.Auth)
 		{
-			v1.GET("/getproduk", produk.GetDataProduk)
-			v1.POST("/create", produk.ProdukCreate)
-			v1.PUT("/update", produk.ProdukUpdate)
-			v1.DELETE("/delete", produk.ProdukDelete)
+			userEP := v1.Group("produk")
+			{
+				authUserEP := userEP.Group("")
+				authUserEP.Use(middleware.Auth)
+
+				userEP.GET("/getproduk", produk.GetDataProduk)
+				authUserEP.POST("/create", produk.ProdukCreate)
+				authUserEP.PUT("/update", produk.ProdukUpdate)
+				authUserEP.DELETE("/delete", produk.ProdukDelete)
+			}
 		}
 
 	}
