@@ -20,7 +20,48 @@ services:
     volumes:
       - "/etc/timezone:/etc/timezone:ro"
       - "/etc/localtime:/etc/localtime:ro"
-
+  user :
+    build: /root/sellpump_backend/user_microservices
+    container_name: sellpump_service_user 
+    image: sellpump_service_user 
+    ports:
+      - 2201:2201
+    networks:
+      sellpump:
+        ipv4_address: 172.20.0.51
+    volumes:
+      - SellpumpFiles:/files
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/root/sellpump_backend/user_microservices:/logs"
+  produk :
+    build: /root/sellpump_backend/produk_microservice
+    container_name: sellpump_service_poduk
+    image: sellpump_service_produk
+    ports:
+      - 2202:2202
+    networks:
+      sellpump:
+        ipv4_address: 172.20.0.52
+    volumes:
+      - SellpumpFiles:/files
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/root/sellpump_backend/produk_microservice:/logs"
+  merk :
+    build: /root/sellpump_backend/merk_microservice
+    container_name: sellpump_service_merk 
+    image: sellpump_service_merk 
+    ports:
+      - 2203:2203
+    networks:
+      sellpump:
+        ipv4_address: 172.20.0.53
+    volumes:
+      - SellpumpFiles:/files
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/root/sellpump_backend/merk_microservice:/logs"
   kategori :
     build: /root/sellpump_backend/kategori_microservice
     container_name: sellpump_service_kategori 
@@ -35,6 +76,34 @@ services:
       - "/etc/timezone:/etc/timezone:ro"
       - "/etc/localtime:/etc/localtime:ro"
       - "/root/sellpump_backend/kategori_microservice:/logs"
+  keranjang :
+    build: /root/sellpump_backend/keranjang_microservice
+    container_name: sellpump_service_keranjang 
+    image: sellpump_service_keranjang 
+    ports:
+      - 2205:2205
+    networks:
+      sellpump:
+        ipv4_address: 172.20.0.55
+    volumes:
+      - SellpumpFiles:/files
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/root/sellpump_backend/keranjang_microservice:/logs"
+  haproxy :
+    build: /root/sellpump_backend/haproxy2 
+    container_name: sellpump_haproxy2
+    image: sellpump_haproxy2 
+    ports:
+      - 4000-4010:4000-4010
+    networks:
+      sellpump:
+        ipv4_address: 172.20.0.56
+    volumes:
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+      - /root/sellpump_backend/haproxy2/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+  
 
 volumes:
   PostgresSellpump:
