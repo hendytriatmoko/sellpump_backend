@@ -90,6 +90,19 @@ services:
       - "/etc/timezone:/etc/timezone:ro"
       - "/etc/localtime:/etc/localtime:ro"
       - "/root/sellpump_backend/keranjang_microservices:/logs"
+  haproxy :
+    build: /root/sellpump_backend/haproxy2 
+    container_name: sellpump_haproxy2
+    image: sellpump_haproxy2 
+    ports:
+      - 4000-4010:4000-4010
+    networks:
+      salestrack:
+        ipv4_address: 172.20.0.56
+    volumes:
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+      - /root/sellpump_backend/haproxy2 /haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
 
 volumes:
   PostgresSellpump:
