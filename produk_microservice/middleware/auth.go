@@ -8,8 +8,8 @@ import (
 	"github.com/mitchellh/mapstructure"
 	"strings"
 	"time"
-	"user_microservices/databases"
-	"user_microservices/models"
+	"produk_microservice/databases"
+	"produk_microservice/models"
 )
 
 var jwtKey = []byte("salestrackKambing00h3h3")
