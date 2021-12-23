@@ -125,7 +125,7 @@ func (m *User) UserUpdate(params models.UpdateUser) ([]models.UserGet, error) {
 	getuser := []models.UserGet{}
 
 	if params.Foto != nil {
-		path := "/produk/"
+		path := "/user/"
 		pathImage := "./files/"+path
 		ext := filepath.Ext(params.Foto.Filename)
 		filename := strings.Replace(params.Nama," ","_", -1)+params.NoTelp+ext
@@ -213,7 +213,10 @@ func (m *User) UserResendVerification(params models.CheckAkunUser) (models.Check
 
 	updateverifikasi := models.CheckAkunRead{}
 
-	updateverifikasi.ExpiredAt = m.helper.GetTimeNow()
+	ti := time.Now()
+	ti_n := ti.AddDate(0, 0, 7)
+	next := string(ti_n.Format("2006-01-02 15:04:05.999999"))
+	updateverifikasi.ExpiredAt = next
 
 	err := databases.DatabaseSellPump.DB.Table("verifikasi").Where("email = ?", params.Email).Update(&updateverifikasi).Error
 

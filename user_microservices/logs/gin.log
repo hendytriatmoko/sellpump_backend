@@ -1897,3 +1897,43 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :2208
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /sellpump/api/user/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] HEAD   /sellpump/api/user/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] GET    /sellpump/api/user/v1/user/getuser --> user_microservices/controllers.(*User).GetDataUser-fm (6 handlers)
+[GIN-debug] POST   /sellpump/api/user/v1/user/create --> user_microservices/controllers.(*User).UserCreate-fm (5 handlers)
+[GIN-debug] POST   /sellpump/api/user/v1/user/check --> user_microservices/controllers.(*User).UserCheckAkun-fm (5 handlers)
+[GIN-debug] POST   /sellpump/api/user/v1/user/signin --> user_microservices/controllers.(*User).Signin-fm (5 handlers)
+[GIN-debug] POST   /sellpump/api/user/v1/user/resend_verification --> user_microservices/controllers.(*User).UserResendVerification-fm (5 handlers)
+[GIN-debug] POST   /sellpump/api/user/v1/user/forgot_password --> user_microservices/controllers.(*User).UserForgotPassword-fm (5 handlers)
+[GIN-debug] PUT    /sellpump/api/user/v1/user/update --> user_microservices/controllers.(*User).UserUpdate-fm (5 handlers)
+[GIN-debug] DELETE /sellpump/api/user/v1/user/delete --> user_microservices/controllers.(*User).UserDelete-fm (5 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :2201
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /sellpump/api/user/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] HEAD   /sellpump/api/user/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] GET    /sellpump/api/user/v1/user/getuser --> user_microservices/controllers.(*User).GetDataUser-fm (6 handlers)
+[GIN-debug] POST   /sellpump/api/user/v1/user/create --> user_microservices/controllers.(*User).UserCreate-fm (5 handlers)
+[GIN-debug] POST   /sellpump/api/user/v1/user/check --> user_microservices/controllers.(*User).UserCheckAkun-fm (5 handlers)
+[GIN-debug] POST   /sellpump/api/user/v1/user/signin --> user_microservices/controllers.(*User).Signin-fm (5 handlers)
+[GIN-debug] POST   /sellpump/api/user/v1/user/resend_verification --> user_microservices/controllers.(*User).UserResendVerification-fm (5 handlers)
+[GIN-debug] POST   /sellpump/api/user/v1/user/forgot_password --> user_microservices/controllers.(*User).UserForgotPassword-fm (5 handlers)
+[GIN-debug] PUT    /sellpump/api/user/v1/user/update --> user_microservices/controllers.(*User).UserUpdate-fm (5 handlers)
+[GIN-debug] DELETE /sellpump/api/user/v1/user/delete --> user_microservices/controllers.(*User).UserDelete-fm (5 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :2201

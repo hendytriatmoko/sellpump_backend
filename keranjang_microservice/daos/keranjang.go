@@ -17,10 +17,20 @@ func (m *Keranjang) KeranjangGet(params models.KeranjangGet) ([]models.Keranjang
 
 	keranjang := []models.KeranjangGet{}
 
-	err := databases.DatabaseSellPump.DB.Table("keranjang").Find(&keranjang).Error
+	err := databases.DatabaseSellPump.DB.Table("keranjang").Select("keranjang.*,k.nama_produk,k.harga_produk").
+		Joins("join produk k on k.id_produk = keranjang.id_produk")
 
-	if err != nil {
-		return []models.KeranjangGet{}, err
+	if params.IdUser != "" {
+		err = err.Where("keranjang.id_user = ?", params.IdUser)
+	}
+
+	err = err.Find(&keranjang)
+
+	errx := err.Error
+
+
+	if errx != nil {
+		return []models.KeranjangGet{}, errx
 	}
 
 	return keranjang, nil

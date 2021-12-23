@@ -186,3 +186,19 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :2208
 [GIN] 2021/12/04 - 00:28:26 | 200 |     82.1774ms |       127.0.0.1 | GET      "/sellpump/api/merk/v1/getmerk"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /sellpump/api/merk/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (4 handlers)
+[GIN-debug] HEAD   /sellpump/api/merk/photo/*filepath --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (4 handlers)
+[GIN-debug] GET    /sellpump/api/merk/v1/getmerk --> merk_microservices/controllers.(*Merk).GetDataMerk-fm (4 handlers)
+[GIN-debug] POST   /sellpump/api/merk/v1/create --> merk_microservices/controllers.(*Merk).MerkCreate-fm (4 handlers)
+[GIN-debug] PUT    /sellpump/api/merk/v1/update --> merk_microservices/controllers.(*Merk).MerkUpdate-fm (4 handlers)
+[GIN-debug] DELETE /sellpump/api/merk/v1/delete --> merk_microservices/controllers.(*Merk).MerkDelete-fm (4 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :2203
